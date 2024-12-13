@@ -36,9 +36,10 @@ addBookButton.addEventListener("click", function () {
 function displayLibrary() {
   libraryContainer.replaceChildren();
 
-  myLibrary.forEach((book) => {
+  myLibrary.forEach((book, index) => {
     const bookCard = document.createElement("div");
     bookCard.classList.add("book__card");
+    bookCard.setAttribute("data-index", index);
 
     /* Create elements for each part of the book */
     const titleElement = document.createElement("p");
@@ -61,7 +62,20 @@ function displayLibrary() {
     readElement.classList.add("book__card-read");
     bookCard.appendChild(readElement);
 
+    const removeButton = document.createElement("button");
+    removeButton.textContent = "Remove";
+    removeButton.classList.add("remove");
+    removeButton.addEventListener("click", function () {
+      removeBook(index);
+    });
+    bookCard.appendChild(removeButton);
+
     /* Add book to library container*/
     libraryContainer.appendChild(bookCard);
   });
+}
+
+function removeBook(index) {
+  myLibrary.splice(index, 1);
+  displayLibrary();
 }

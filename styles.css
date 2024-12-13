@@ -124,3 +124,16 @@ input {
 .submit:hover {
   background-color: lightblue;
 }
+
+.remove {
+  border-radius: 15px;
+  font-size: 1rem;
+  padding: 0.5rem 1.5rem 0.5rem 1.5rem;
+  border: 2px solid black;
+  cursor: pointer;
+  background-color: rgb(255, 169, 169);
+}
+
+.remove:hover {
+  background-color: rgb(255, 126, 126);
+}
