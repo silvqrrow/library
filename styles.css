@@ -51,3 +51,76 @@ body {
 .book__card-author {
   font-style: italic;
 }
+
+.add-button {
+  border: none;
+  font-size: 1.5rem;
+  margin: 1rem;
+  cursor: pointer;
+}
+
+.add-button:hover {
+  color: #979797;
+}
+
+dialog {
+  border: none;
+  border-radius: 15px;
+  padding: 4rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  margin: 0 auto;
+  margin-top: 15rem;
+}
+
+.add-book-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.read-input {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+input {
+  margin: 0.5rem;
+  padding: 1rem 2rem 1rem 0.5rem;
+  text-align: left;
+  font-size: 1rem;
+  border-radius: 15px;
+  border: 2px solid gray;
+}
+
+.add-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.read-text {
+  font-size: 1.2rem;
+  margin: 0.5rem;
+}
+
+.checkbox {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  accent-color: #8fff62;
+}
+
+.submit {
+  font-size: 1.2rem;
+  margin: 1rem;
+  border-radius: 15px;
+  border: 2px solid black;
+  padding: 0.5rem;
+  cursor: pointer;
+  background: rgb(206, 239, 250);
+}
+
+.submit:hover {
+  background-color: lightblue;
+}

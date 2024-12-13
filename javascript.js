@@ -13,6 +13,12 @@ function addBookToLibrary(title, author, pages, read) {
 }
 
 const libraryContainer = document.querySelector(".book__container");
+const bookDialog = document.querySelector(".dialog");
+const addBookButton = document.querySelector(".add-button");
+
+addBookButton.addEventListener("click", function () {
+  bookDialog.showModal();
+});
 
 function displayLibrary() {
   myLibrary.forEach((book) => {
@@ -45,7 +51,7 @@ function displayLibrary() {
   });
 }
 
-/* TESTING */
+// Example usage
 addBookToLibrary("The Hobbit", "J.R.R. Tolkien", 310, true);
 addBookToLibrary("1984", "George Orwell", 328, false);
 displayLibrary();
