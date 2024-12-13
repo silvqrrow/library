@@ -10,17 +10,32 @@ function Book(title, author, pages, read) {
 function addBookToLibrary(title, author, pages, read) {
   const newBook = new Book(title, author, pages, read);
   myLibrary.push(newBook);
+  displayLibrary();
 }
 
 const libraryContainer = document.querySelector(".book__container");
 const bookDialog = document.querySelector(".dialog");
 const addBookButton = document.querySelector(".add-button");
+const addBookForm = document.querySelector(".add-book-form");
+
+addBookForm.addEventListener("submit", function (e) {
+  e.preventDefault();
+  const title = addBookForm.title.value;
+  const author = addBookForm.author.value;
+  const pages = addBookForm.pages.value;
+  const read = addBookForm.read.checked;
+  addBookToLibrary(title, author, pages, read);
+  bookDialog.close();
+  addBookForm.reset();
+});
 
 addBookButton.addEventListener("click", function () {
   bookDialog.showModal();
 });
 
 function displayLibrary() {
+  libraryContainer.replaceChildren();
+
   myLibrary.forEach((book) => {
     const bookCard = document.createElement("div");
     bookCard.classList.add("book__card");
@@ -50,8 +65,3 @@ function displayLibrary() {
     libraryContainer.appendChild(bookCard);
   });
 }
-
-// Example usage
-addBookToLibrary("The Hobbit", "J.R.R. Tolkien", 310, true);
-addBookToLibrary("1984", "George Orwell", 328, false);
-displayLibrary();
