@@ -4,19 +4,19 @@ const bookDialog = document.querySelector(".dialog");
 const addBookButton = document.querySelector(".add-button");
 const addBookForm = document.querySelector(".add-book-form");
 
-/* Book Object*/
-function Book(title, author, pages, read) {
-  this.title = title;
-  this.author = author;
-  this.pages = pages;
-  this.read = read;
-}
+class Book {
+  constructor(title, author, pages, read) {
+    this.title = title;
+    this.author = author;
+    this.pages = pages;
+    this.read = read;
+  }
 
-/* Prototype read status */
-Book.prototype.readStatus = function () {
-  this.read = !this.read;
-  return this.read;
-};
+  readStatus() {
+    this.read = !this.read;
+    return this.read;
+  }
+}
 
 function addBookToLibrary(title, author, pages, read) {
   const newBook = new Book(title, author, pages, read);
